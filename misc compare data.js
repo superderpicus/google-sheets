@@ -9,6 +9,7 @@
 var monsters =
 [
     // ['monster name', hp, enrage, raw hzv, fire, water, thunder, ice, dragon, ailment mod1, ailment mod 2, initial, buildup, cap, damage]
+    //A  0 to 40
     ['Acidic Glavenus', 19136, 1, 57, 20, 10, 15, 5, 15, 1.4, 2.2, 70, 30, 670, 100],
     ['Alatreon (Head)', 52500, 1.2, 88, 14, 10, 10, 14, 1, 2, 4, 150, 200, 2150, 100],
     ['Alatreon (Arm)',  52500, 1.2, 70, 22, 16, 16, 22, 2, 2, 4, 150, 200, 2150, 100],
@@ -50,6 +51,8 @@ var monsters =
     ['Kulve (Released)(Arm)', 54000, 1.2, 77, 0, 10, 0, 20, 15, 2, 4, 120, 120, 1920, 200],
     ['Kushala',         25472, 1.1, 66, 10, 5, 20, 0, 10, 1.45, 2.3, 40, 20, 440, 100],
     ['Lavasioth (Broken Head)',  25600, 0.9, 56, 5, 35, 15, 15, 5, 1.35, 3.1, 120, 90, 1920, 100],
+
+    // B 41 to 67
     ['Legiana',         19200, 1.1, 69, 20, 15, 25, 0, 10, 1.35, 2.1, 70, 30, 670, 100],
     ['Lunastra (Head)',  30100, 1.2, 52, 0, 7, 7, 30, 25, 1.5, 2.4, 70, 30, 670, 100],
     ['Namielle (Hydrated)',25600, 0.9, 60, 40, 0, 0, 15, 30, 1.45, 2.3, 40, 20, 440, 100],
@@ -77,6 +80,8 @@ var monsters =
     ['Seething Bazel (Leg)', 25600, 1.1, 51, 0, 5, 10, 15, 5, 1.45, 2.3, 120, 90, 1920, 23],
     ['Shara Ishvalda (Rock)', 37100, 1.05, 62, 5, 15, 0, 20, 5, 1.5, 2.4, 70, 30, 670, 200],
     ['Shara Ishvalda (Released)', 37100, 1.05, 77, 10, 20, 0, 25, 5, 1.5, 2.4, 70, 30, 670, 200],
+
+    // C 68 to 84
     ['Shrieking Legiana', 19200, 1.1, 73, 15, 10, 15, 0, 10, 1.4, 2.2, 70, 30, 670, 100],
     ['Silver Rathalos', 21000, 1.2, 71, 0, 30, 20, 10, 0, 1.5, 2.4, 120, 60, 720, 100],
     ['Stygian Zinogre (Charged)', 21000, 1, 58, 20, 25, 30, 20, 0, 1.5, 2.4, 40, 20, 440, 100],
@@ -355,21 +360,25 @@ function createNewSheet(name)
     return newSheet; // return sheet object
 }
 
-function automate()
+function automate(start, end)
 {
     // empty sheet
-    wipe();
+    //wipe();
 
     var sheet = SpreadsheetApp.getActiveSheet(); // current input sheet
     agiUptime = sheet.getRange('D2').getValue(); // 70%
 
     // iterate the monsters array, and calculate :poggies:
-    for (var i = 0; i < monsters.length; i++)
+    for (var i = start; i <= end; i++)
     {
     // ['monster name', hp, enrage, raw hzv, fire, water, thunder, ice, dragon, ailment mod1, ailment mod 2, initial, buildup, cap, damage]
         calcAndOutput(monsters[i]);
     }
 }
+
+function simA() { automate(0, 40); }
+function simB() { automate(41, 67); }
+function simC() { automate(68, 84); }
 
 function calcAndOutput(monsterOptions)
 {
