@@ -54,7 +54,7 @@ var monsters =
     ['Kushala',         25472, 1.1, 66, 10, 5, 20, 0, 10, 1.45, 2.3, 40, 20, 440, 100],
     ['Lavasioth (Broken Head)',  25600, 0.9, 56, 5, 35, 15, 15, 5, 1.35, 3.1, 120, 90, 1920, 100],
 
-    // C 41 to 67
+    // C 41 to 55
     ['Legiana',         19200, 1.1, 69, 20, 15, 25, 0, 10, 1.35, 2.1, 70, 30, 670, 100],
     ['Lunastra (Head)',  30100, 1.2, 52, 0, 7, 7, 30, 25, 1.5, 2.4, 70, 30, 670, 100],
     ['Namielle (Hydrated)',25600, 0.9, 60, 40, 0, 0, 15, 30, 1.45, 2.3, 40, 20, 440, 100],
@@ -70,6 +70,8 @@ var monsters =
     ['Pukei-Pukei', 16240, 1.1, 70, 15, 0, 30, 20, 10, 1.25, 1.9, 70, 30, 670, 100],
     ['Radobaan', 18300, 1, 70, 20, 20, 20, 20, 30, 1.3, 2, 40, 20, 440, 100],
     ['Raging Brachy', 18300, 1.05, 70, 0, 10, 10, 25, 5, 1.6, 3, 120, 90, 1920, 100],
+
+    // 56 to 67
     ['Rajang (Head)', 18900, 1, 60, 0, 5, 0, 30, 0, 1.5, 2.4, 70, 30, 670, 100],
     ['Rajang (Arm)', 18900, 1, 57, 0, 5, 0, 15, 0, 1.5, 2.4, 70, 30, 670, 100],
     ['Rathalos', 20800, 1.1, 70, 0, 15, 20, 15, 30, 1.35, 2.1, 120, 60, 720, 100],
@@ -380,8 +382,9 @@ function automate(start, end)
 
 function simA() { automate(0, 18); }
 function simB() { automate(19, 40); }
-function simC() { automate(41, 67); }
-function simD() { automate(68, 83); }
+function simC() { automate(41, 55); }
+function simD() { automate(56, 67); }
+function simE() { automate(68, 83); }
 
 function calcAndOutput(monsterOptions)
 {
