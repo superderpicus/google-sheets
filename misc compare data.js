@@ -9,7 +9,7 @@
 var monsters =
 [
     // ['monster name', hp, enrage, raw hzv, fire, water, thunder, ice, dragon, ailment mod1, ailment mod 2, initial, buildup, cap, damage]
-    //A  0 to 40
+    //A  0 to 18
     ['Acidic Glavenus', 19136, 1, 57, 20, 10, 15, 5, 15, 1.4, 2.2, 70, 30, 670, 100],
     ['Alatreon (Head)', 52500, 1.2, 88, 14, 10, 10, 14, 1, 2, 4, 150, 200, 2150, 100],
     ['Alatreon (Arm)',  52500, 1.2, 70, 22, 16, 16, 22, 2, 2, 4, 150, 200, 2150, 100],
@@ -29,6 +29,8 @@ var monsters =
     ['Brachydios',      27520, 0.95, 66, 0, 15, 10, 20, 5, 1.35, 2.1, 120, 90, 1920, 100],
     ['Brute Tigrex',    21000, 1.1, 58, 0, 20, 18, 12, 5, 1.5, 2.4, 70, 30, 670, 100],
     ['Coral Pukei',     18300, 1.1, 70, 10, 0, 15, 30, 10, 1.3, 2, 70, 30, 670, 100],
+
+    // D 19 to 40
     ['Deviljho',        8888,  1.1, 81, 20, 20, 25, 15, 25, 1.2, 1.2, 70, 30, 670, 40],
     ['Diablos (Chest)',     20800, 1.1, 73, 0, 30, 10, 35, 30, 1.35, 2.1, 70, 30, 670, 100],
     ['Diablos (Head)',      20800, 1.1, 58, 0, 20, 10, 25, 20, 1.35, 2.1, 70, 30, 670, 100],
@@ -376,9 +378,10 @@ function automate(start, end)
     }
 }
 
-function simA() { automate(0, 40); }
-function simB() { automate(41, 67); }
-function simC() { automate(68, 84); }
+function simA() { automate(0, 18); }
+function simB() { automate(19, 40); }
+function simC() { automate(41, 67); }
+function simD() { automate(68, 83); }
 
 function calcAndOutput(monsterOptions)
 {
