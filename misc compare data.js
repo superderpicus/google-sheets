@@ -141,29 +141,33 @@ var sets =
 [
     // ['name', efr, efe, efs, offset]
     ['Safi Shatterspear (100% Coal)',   1002.19, 0, 7.33, 13, Blast],
-    ['Safi Shatterspear (75% Coal)',    996.35, 0, 7.33, 14, Blast],
+    //['Safi Shatterspear (75% Coal)',    996.35, 0, 7.33, 14, Blast],
     ['Safi Shatterspear (50% Coal)',    988.57, 0, 7.33, 15, Blast],
-    ['Safi Shatterspear (25% Coal)',    982.73, 0, 7.33, 16, Blast],
+    //['Safi Shatterspear (25% Coal)',    982.73, 0, 7.33, 16, Blast],
     ['Safi Shatterspear (0% Coal)',     978.84, 0, 7.33, 17, Blast],
     ['Lightbreak Press (100% Coal)',    990.51, 0, 7.33, 18, Blast],
-    ['Lightbreak Press (75% Coal)',     984.68, 0, 7.33, 19, Blast],
+   // ['Lightbreak Press (75% Coal)',     984.68, 0, 7.33, 19, Blast],
     ['Lightbreak Press (50% Coal)',     978.84, 0, 7.33, 20, Blast],
-    ['Lightbreak Press (25% Coal)',     971.05, 0, 7.33, 21, Blast],
+    //['Lightbreak Press (25% Coal)',     971.05, 0, 7.33, 21, Blast],
     ['Lightbreak Press (0% Coal)',      965.22, 0, 7.33, 22, Blast],
     ['Alatreon\'s Embrace',             969.11, 85, 0, 23, Dragon],
     ['Safi Raw Ele (100% Coal)',        1002.19, 26.25, 0, 24, AllEle],
-    ['Safi Raw Ele (75% Coal)',         996.35, 25.31, 0, 25, AllEle],
+    //['Safi Raw Ele (75% Coal)',         996.35, 25.31, 0, 25, AllEle],
     ['Safi Raw Ele (50% Coal)',         988.57, 24.38, 0, 26, AllEle],
-    ['Safi Raw Ele (25% Coal)',         982.73, 23.44, 0, 27, AllEle],
+    //['Safi Raw Ele (25% Coal)',         982.73, 23.44, 0, 27, AllEle],
     ['Safi Raw Ele (0% Coal)',          974.95, 22.5, 0, 28, AllEle],
     ['KPara',                           911.06, 0, 0, 29, NoEle],
     ['KWater',                          872.26, 97.81, 0, 30, Water],
     ['Safihemoth',                      945.76, 50, 0, 31, AllEle],
-    ['Brakulve (100% Coal)',            980.78, 35, 0, 32, AllEle],
-    ['Brakulve (75% Coal)',             973, 34.06, 0, 33, AllEle],
-    ['Brakulve (50% Coal)',             967.16, 33.13, 0, 34, AllEle],
-    ['Brakulve (25% Coal)',             959.38, 32.19, 0, 35, AllEle],
-    ['Brakulve (0% Coal)',              953.54, 31.25, 0, 36, AllEle],
+    //['Brakulve (100% Coal)',            980.78, 35, 0, 32, AllEle],
+   //['Brakulve (75% Coal)',             973, 34.06, 0, 33, AllEle],
+    //['Brakulve (50% Coal)',             967.16, 33.13, 0, 34, AllEle],
+    //['Brakulve (25% Coal)',             959.38, 32.19, 0, 35, AllEle],
+    //['Brakulve (0% Coal)',              953.54, 31.25, 0, 36, AllEle],
+    ['Fatalis (100% Coal)',                 1117, 30, 0, 0, Dragon],
+    ['Fatalis (50% Coal)',                 1097.54, 24.38, 0, 0, Dragon],
+    ['Fatalis (0% Coal)',                 1076.14, 18.75, 0, 0, Dragon],
+    //['Fatalis mt',                      1103.38, 22.5, 0, 0, Dragon],
 ]
 
 // loops is an array of different combo loops,
@@ -437,7 +441,7 @@ function calcAndOutput(monsterOptions)
     }
 
     // filter will let you sort ascending or descending based on columns
-    var filter = newSheet.getRange(outputColumn + '1:' + outputColumn2 + '25').createFilter();
+    var filter = newSheet.getRange(outputColumn + '1:' + outputColumn2 + (sets.length + 1)).createFilter();
     // this loop will set columns to the widest size they need to be,
     // while also remaining readable
     for (var x = 1; x < 25; x++)
