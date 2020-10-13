@@ -102,6 +102,11 @@ var monsters =
     ['Yian Garuga', 22050, 1.1, 70, 0, 30, 0, 10, 15, 1.5, 2.4, 40, 20, 440, 100],
     ['Zinogre (Charged)', 23450, 1, 73, 10, 20, 0, 25, 10, 1.5, 2.4, 70, 30, 670, 100],
     ['Zinogre (Uncharged)', 23450, 1, 58, 5, 10, 0, 15, 5, 1.5, 2.4, 70, 30, 670, 100],
+
+    // fatalis
+    ['Fatalis (Head)', 66000, 1.1, 76, 17, 5, 5, 12, 25, 3, 5, 150, 200, 3000, 100],
+    ['Fatalis (Chest)', 66000, 1.1, 53, 13, 5, 5, 10, 15, 3, 5, 150, 200, 3000, 100],
+    ['Fatalis (Chest)(Critical)', 66000, 1.1, 72, 13, 5, 5, 10, 15, 3, 5, 150, 200, 3000, 100],
 ];
 
 var monsterStats =
@@ -389,6 +394,7 @@ function simB() { automate(19, 40); }
 function simC() { automate(41, 55); }
 function simD() { automate(56, 67); }
 function simE() { automate(68, 83); }
+function simF() { automate(84, 86); }
 
 function calcAndOutput(monsterOptions)
 {
